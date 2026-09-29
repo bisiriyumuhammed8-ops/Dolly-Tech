@@ -21,6 +21,9 @@ export const DEFAULT_BUSINESS_CONFIG: BusinessConfig = {
   instagramUrl: 'https://instagram.com',
   twitterUrl: 'https://twitter.com',
   accentTheme: 'cyan',
+  heroImageUrl: '/dollytech-hero.jpg',
+  flyerImageUrl: '/logo.png',
+  heroDisplayMode: 'showcase',
 };
 
 export const INITIAL_LAPTOP_PRODUCTS: LaptopProduct[] = [

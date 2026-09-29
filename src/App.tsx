@@ -16,6 +16,7 @@ import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProductDetailsModal } from './components/ProductDetailsModal';
+import { FlyerModal } from './components/FlyerModal';
 import { BusinessConfigDrawer } from './components/BusinessConfigDrawer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Preloader } from './components/Preloader';
@@ -62,6 +63,7 @@ export default function App() {
 
         {/* Modals & Overlays */}
         <ProductDetailsModal />
+        <FlyerModal />
         <BusinessConfigDrawer />
         <FloatingWhatsApp />
       </div>

@@ -29,7 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ laptop }) => {
   return (
     <div 
       onClick={() => setSelectedLaptopModal(laptop)}
-      className="group cursor-pointer rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 shadow-lg shadow-black/20 hover:shadow-cyan-950/20 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1"
+      className="group cursor-pointer rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/60 shadow-lg shadow-black/20 hover:shadow-cyan-950/30 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1.5 card-interactive shine-overlay"
     >
       <div>
         {/* Product Image Container */}
@@ -39,6 +39,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ laptop }) => {
             alt={`${laptop.brand} ${laptop.name}`}
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              if (target.src !== window.location.origin + '/dollytech-hero.jpg') {
+                target.src = '/dollytech-hero.jpg';
+              }
+            }}
           />
           
           {/* Subtle gradient vignette */}

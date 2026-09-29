@@ -42,6 +42,8 @@ interface BusinessContextType {
   addContactMessage: (message: Omit<ContactMessage, 'id' | 'createdAt'>) => Promise<boolean>;
   isConfigDrawerOpen: boolean;
   setIsConfigDrawerOpen: (open: boolean) => void;
+  isFlyerModalOpen: boolean;
+  setIsFlyerModalOpen: (open: boolean) => void;
   showPreloader: boolean;
   setShowPreloader: (show: boolean) => void;
   triggerPreloader: () => void;
@@ -80,7 +82,10 @@ export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             ? DEFAULT_BUSINESS_CONFIG.whatsappNumber 
             : parsed.whatsappNumber,
           formspreeEndpoint: parsed.formspreeEndpoint || DEFAULT_BUSINESS_CONFIG.formspreeEndpoint,
-          logoUrl: DEFAULT_BUSINESS_CONFIG.logoUrl || '/logo.png',
+          logoUrl: parsed.logoUrl || DEFAULT_BUSINESS_CONFIG.logoUrl || '/dollytech-logo.jpg',
+          heroImageUrl: parsed.heroImageUrl || DEFAULT_BUSINESS_CONFIG.heroImageUrl || '/dollytech-hero.jpg',
+          flyerImageUrl: parsed.flyerImageUrl || DEFAULT_BUSINESS_CONFIG.flyerImageUrl || '/logo.png',
+          heroDisplayMode: parsed.heroDisplayMode || DEFAULT_BUSINESS_CONFIG.heroDisplayMode || 'showcase',
         };
       }
       return DEFAULT_BUSINESS_CONFIG;
@@ -130,6 +135,7 @@ export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [selectedLaptopModal, setSelectedLaptopModal] = useState<LaptopProduct | null>(null);
   const [selectedRepairForBooking, setSelectedRepairForBooking] = useState<RepairService | null>(null);
   const [isConfigDrawerOpen, setIsConfigDrawerOpen] = useState(false);
+  const [isFlyerModalOpen, setIsFlyerModalOpen] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
 
   const triggerPreloader = () => {
@@ -369,6 +375,8 @@ export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       addContactMessage,
       isConfigDrawerOpen,
       setIsConfigDrawerOpen,
+      isFlyerModalOpen,
+      setIsFlyerModalOpen,
       showPreloader,
       setShowPreloader,
       triggerPreloader,

@@ -58,6 +58,9 @@ export interface BusinessConfig {
   twitterUrl?: string;
   tiktokUrl?: string;
   accentTheme: 'cyan' | 'blue' | 'emerald' | 'amber';
+  heroImageUrl?: string;
+  heroDisplayMode?: 'showcase' | 'flyer';
+  flyerImageUrl?: string;
 }
 
 export interface RepairBookingRequest {

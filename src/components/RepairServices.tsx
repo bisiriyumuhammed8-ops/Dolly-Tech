@@ -89,7 +89,7 @@ export const RepairServices: React.FC = () => {
           {repairServices.map((service) => (
             <div
               key={service.id}
-              className="group p-6 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800/90 hover:border-cyan-500/50 shadow-lg shadow-black/20 hover:shadow-cyan-950/30 transition-all duration-300 flex flex-col justify-between"
+              className="group p-6 rounded-2xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800/90 hover:border-cyan-500/50 shadow-lg shadow-black/20 hover:shadow-cyan-950/30 transition-all duration-300 flex flex-col justify-between card-interactive shine-overlay"
             >
               <div className="space-y-4">
                 

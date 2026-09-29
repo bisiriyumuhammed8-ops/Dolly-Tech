@@ -18,11 +18,17 @@ export const Logo: React.FC<LogoProps> = ({
   const displayName = businessConfig.businessName || 'DollyTech Solution';
   const [imageError, setImageError] = useState(false);
 
-  // Primary local asset with cloud fallback
+  // Primary local asset with local fallback
   const primaryLogoUrl = businessConfig.logoUrl || '/logo.png';
-  const fallbackLogoUrl = 'https://i.imgur.com/Qm4GJL3.png';
+  const fallbackLogoUrl = '/dollytech-logo.jpg';
 
   const [imgSrc, setImgSrc] = useState(primaryLogoUrl);
+
+  // Sync image source whenever business configuration changes
+  React.useEffect(() => {
+    setImageError(false);
+    setImgSrc(businessConfig.logoUrl || '/logo.png');
+  }, [businessConfig.logoUrl]);
 
   const handleImageError = () => {
     if (imgSrc !== fallbackLogoUrl) {

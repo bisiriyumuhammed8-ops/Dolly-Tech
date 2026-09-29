@@ -101,6 +101,12 @@ export const ProductDetailsModal: React.FC = () => {
                   src={laptop.imageUrl}
                   alt={laptop.name}
                   className="w-full h-full object-cover object-center"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== window.location.origin + '/dollytech-hero.jpg') {
+                      target.src = '/dollytech-hero.jpg';
+                    }
+                  }}
                 />
                 <div className="absolute bottom-2.5 left-2.5 bg-slate-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-bold text-white border border-slate-800">
                   {laptop.brand} Official Hardware

@@ -28,11 +28,11 @@ export const FloatingWhatsApp: React.FC = () => {
         href={getWhatsAppLink()}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-600 to-green-500 text-white shadow-xl shadow-emerald-950/60 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-500/40"
+        className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-600 to-green-500 text-white shadow-2xl shadow-emerald-950/80 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-500/40 animate-float"
         aria-label="Chat with business on WhatsApp"
       >
-        {/* Subtle ripple wave */}
-        <span className="absolute -inset-1 rounded-full bg-emerald-500 opacity-30 group-hover:animate-ping pointer-events-none"></span>
+        {/* Continuous radar ripple ring */}
+        <span className="absolute -inset-2 rounded-full border-2 border-emerald-400 opacity-60 animate-ripple pointer-events-none"></span>
 
         <MessageCircle className="w-7 h-7" />
 

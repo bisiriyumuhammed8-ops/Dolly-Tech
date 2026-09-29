@@ -140,8 +140,10 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               alt="DollyTech Logo"
               className="w-full h-full object-contain filter drop-shadow hover:scale-105 transition-transform"
               onError={(e) => {
-                const target = e.target as HTMLElement;
-                target.style.display = 'none';
+                const target = e.target as HTMLImageElement;
+                if (target.src !== window.location.origin + '/dollytech-logo.jpg') {
+                  target.src = '/dollytech-logo.jpg';
+                }
               }}
             />
 

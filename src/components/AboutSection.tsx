@@ -33,11 +33,14 @@ export const AboutSection: React.FC = () => {
               
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-slate-800 flex items-center gap-3">
                 <img
-                  src={businessConfig.logoUrl || '/logo.png'}
+                  src={businessConfig.logoUrl || '/dollytech-logo.jpg'}
                   alt="DollyTech Solution Logo"
                   className="w-10 h-10 object-contain rounded-lg border border-slate-700 bg-slate-900 p-0.5 shrink-0"
                   onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== window.location.origin + '/dollytech-logo.jpg') {
+                      target.src = '/dollytech-logo.jpg';
+                    }
                   }}
                 />
                 <div className="space-y-0.5">

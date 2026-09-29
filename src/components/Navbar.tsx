@@ -8,13 +8,19 @@ import {
   SlidersHorizontal,
   ChevronRight,
   ShieldCheck,
-  MapPin
+  MapPin,
+  Eye
 } from 'lucide-react';
 import { useBusiness } from '../context/BusinessContext';
 import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
-  const { businessConfig, setIsConfigDrawerOpen, getWhatsAppLink } = useBusiness();
+  const { 
+    businessConfig, 
+    setIsConfigDrawerOpen, 
+    setIsFlyerModalOpen, 
+    getWhatsAppLink 
+  } = useBusiness();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -77,7 +83,18 @@ export const Navbar: React.FC = () => {
             <span className="truncate">Isolo, Lagos · Walk-ins Welcome</span>
           </div>
 
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* View Flyer Button */}
+            <button
+              type="button"
+              onClick={() => setIsFlyerModalOpen(true)}
+              className="flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 text-cyan-300 text-[10px] sm:text-[11px] font-semibold transition-colors"
+              title="Click to view DollyTech official business flyer and poster"
+            >
+              <Eye className="w-3 h-3 text-cyan-400" />
+              <span>View Flyer</span>
+            </button>
+
             {/* Phone link */}
             <a 
               href={isPhonePlaceholder ? '#contact' : `tel:${businessConfig.phone}`}
@@ -91,11 +108,11 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setIsConfigDrawerOpen(true)}
               className="flex items-center gap-1 px-2 py-0.5 rounded bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-800/60 text-cyan-300 text-[10px] sm:text-[11px] font-semibold transition-colors"
-              title="Click to customize business name, phone, WhatsApp or address from flyer"
+              title="Click to customize business name, phone, WhatsApp, images or address"
             >
               <SlidersHorizontal className="w-3 h-3 text-cyan-400" />
-              <span className="hidden xs:inline">Flyer Details</span>
-              <span className="xs:hidden">Flyer</span>
+              <span className="hidden xs:inline">Customize</span>
+              <span className="xs:hidden">Edit</span>
             </button>
           </div>
         </div>
