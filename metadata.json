@@ -1,0 +1,8 @@
+{
+  "name": "Dolly Tech Solution Laptops & Computer Repairs",
+  "description": "Premium laptop sales, certified refurbished computers, and expert repair services in Nigeria. Quality devices, genuine parts, and fast service.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
